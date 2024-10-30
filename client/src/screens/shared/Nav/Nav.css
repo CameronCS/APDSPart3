@@ -1,0 +1,13 @@
+.default-nav {
+  display: flex; /* Flexbox for horizontal layout */
+}
+
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-left: 2rem; /* Space between nav items */
+}

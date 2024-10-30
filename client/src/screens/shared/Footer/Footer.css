@@ -1,0 +1,48 @@
+.footer {
+    background-color: #E8E0D2; /* Match navbar background */
+    color: #4E3B31; /* Dark contrast for text */
+    padding: 2rem; /* Space around the footer content */
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow on top */
+  }
+  
+  .footer-section {
+    margin-bottom: 1rem; /* Space between sections */
+  }
+  
+  .developer-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .developer-list li {
+    margin-bottom: 0.5rem; /* Spacing between developer names */
+    font-size: 1rem;
+  }
+  
+  .st-num {
+    font-weight: bold;
+    color: #8b7a6a; /* Highlight student numbers */
+  }
+  
+  .footer-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Center footer links */
+    gap: 2rem; /* Space between links */
+  }
+  
+  .footer-link {
+    color: #4E3B31;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s; /* Smooth transition for hover effect */
+  }
+  
+  .footer-link:hover {
+    color: #8b7a6a; /* Change color on hover */
+  }
+  

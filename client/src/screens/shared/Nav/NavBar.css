@@ -1,0 +1,48 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #E8E0D2; /* Soft light background for contrast */
+  padding: 1rem 2rem; /* Padding around the navbar */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Soft shadow */
+}
+
+.logo-container {
+  flex-shrink: 0; /* Prevents the logo from shrinking */
+}
+
+.logo {
+  height: 50px; /* Adjust logo height */
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /* Allows the nav container to take up remaining space */
+  justify-content: flex-end; /* Aligns navigation to the right */
+}
+
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Flexbox for horizontal layout */
+}
+
+.nav-item {
+  margin-left: 2rem; /* Space between nav items */
+}
+
+.nav-link {
+  color: #4E3B31; /* Darker color for contrast */
+  text-decoration: none; /* Remove underline */
+  font-size: 1.1rem; /* Slightly smaller font size */
+  padding: 0.5rem 1rem; /* Add padding for touch targets */
+  border-radius: 5px; /* Slightly rounded corners */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+}
+
+.nav-link:hover {
+  background-color: #8b7a6a; /* Highlight background on hover */
+  color: #FFFFFF; /* Change text color on hover */
+}
