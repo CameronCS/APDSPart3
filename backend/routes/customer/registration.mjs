@@ -6,7 +6,7 @@ import db from "../../db/conn.mjs";
 const router = express.Router();
 
 router.post('/', async (req, res) => {
-    const { username, password } = req.body;
+    const { username, password, isadmin } = req.body;
 
     // Basic input validation
     if (!username || !password) {
@@ -18,6 +18,7 @@ router.post('/', async (req, res) => {
         const newDocument = {
             username,
             password: hashedPassword,
+            isadmin: isadmin
         };
 
         const collection = db.collection("users");

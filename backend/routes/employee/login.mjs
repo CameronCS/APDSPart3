@@ -69,7 +69,7 @@ router.post('/', bruteForce.prevent, async (req, res) => {
         const token = jwt.sign({ username }, process.env.JWT_TOKEN_LEN, { expiresIn: "1h" });
 
         // Respond with the token and a success message
-        res.status(200).json({ message: "Authentication successful", token });
+        res.status(200).json({ message: "Authentication successful", token, username: employee.username });
     } catch (error) {
         console.error("Error during employee login:", error);
         res.status(500).json({ message: "Internal server error." });
