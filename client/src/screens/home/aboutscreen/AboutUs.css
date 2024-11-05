@@ -1,0 +1,77 @@
+/* AboutUs.css */
+
+.about-us-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+    color: #4E3B31;
+    background-color: #F5F5F5;
+  }
+  
+  .au-h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #8b7a6a;
+    margin-bottom: 2rem;
+  }
+  
+  /* Side-by-side layout for LHS and RHS */
+  .side-wrapper {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .au-lhs, .au-rhs {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  /* Left-hand side styles */
+  .au-lhs-one, .au-lhs-two {
+    background-color: #E8E0D2;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .au-lhs h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #4E3B31;
+  }
+  
+  .au-lhs p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  /* Right-hand side styles */
+  .au-rhs-one, .au-rhs-two {
+    background-color: #F0EDE5;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .au-rhs h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #4E3B31;
+  }
+  
+  .au-rhs p, .au-rhs ol {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .au-rhs ul {
+    padding-left: 1.5rem;
+  }
+  
+  .au-rhs li {
+    margin-bottom: 0.5rem;
+  }
+  
