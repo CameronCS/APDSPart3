@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import NavBar from "./shared/Nav/NavBar";
 import Footer from "./shared/Footer/Footer";
 import NotFound from "./shared/404/NotFound";
-import HomeScreen from "./home/homescreen/HomeScreen";
+import HomeScreen from "./default/home/HomeScreen";
 
 export default function AppRouter() {
   return (
