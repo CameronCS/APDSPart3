@@ -1,15 +1,15 @@
 import React from 'react';
 import Default from './Default/Default';
-import EmployeeNav from './EmployeeNav/EmployeeNav';
-import UserNav from './UserNav/UserNav';
+import EmployeeNav from "./EmployeeNav/EmployeeNav"
+import UserNav from "./UserNav/UserNav"
 import './NavBar.css'; // Import your CSS file
 
-export default function NavBar({ user_type }) {
+export default function NavBar({ user_type, setUser }) {
   const RenderNav = () => {
     if (user_type === 'employee') {
-      return <EmployeeNav />;
+      return <EmployeeNav setUser={setUser} />;
     } else if (user_type === 'user') {
-      return <UserNav />;
+      return <UserNav setUser={setUser} />;
     } else {
       return <Default />;
     }

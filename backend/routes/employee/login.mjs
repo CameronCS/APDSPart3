@@ -8,7 +8,7 @@ const router = express.Router();
 var store = new ExpressBrute.MemoryStore();
 var bruteForce = new ExpressBrute(store);
 
-// Employee Login
+// Register New
 router.post('/new', async (req, res) => {
     const { username, password } = req.body;
 
@@ -40,8 +40,8 @@ router.post('/new', async (req, res) => {
     }
 });
 
-
-router.post('/', bruteForce.prevent, async (req, res) => {
+// Login
+router.post('/', /* bruteForce.prevent , */ async (req, res) => {
     const { username, password } = req.body;
 
     // Basic input validation
@@ -50,7 +50,7 @@ router.post('/', bruteForce.prevent, async (req, res) => {
     }
 
     try {
-        const collection = db.collection("employees"); // Assuming you have a separate collection for employees
+        const collection = db.collection("users"); // Assuming you have a separate collection for employees
         const employee = await collection.findOne({ username });
 
         // Check if the employee exists
@@ -60,13 +60,13 @@ router.post('/', bruteForce.prevent, async (req, res) => {
 
         // Compare the provided password with the stored hashed password
         const passwordMatch = await bcrypt.compare(password, employee.password);
-
+        
         if (!passwordMatch) {
             return res.status(401).json({ message: "Authentication failed!" });
         }
 
         // Create a token upon successful authentication
-        const token = jwt.sign({ username }, process.env.JWT_TOKEN_LEN, { expiresIn: "1h" });
+        const token = jwt.sign({ username }, process.env.JWT_TOKEN_LEN, { expiresIn: "10s" });
 
         // Respond with the token and a success message
         res.status(200).json({ message: "Authentication successful", token, username: employee.username });
