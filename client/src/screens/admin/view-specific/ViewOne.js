@@ -45,50 +45,41 @@ export default function ViewOne({ user, setUser }) {
     }
 
     const render_user_options = () => {
-        if (vpayment.status === 'Pending') {
-            return (
-                <div>
-                    <button 
-                        onClick={() => {
+        switch (vpayment.status) {
+            case 'Pending':
+                return (
+                    <div>
+                        <button onClick={() => {
                             verifyPayment()
-                            window.location.reload()
-                        }}
-                    >
-                        Verify
-                    </button>
-                    <button 
-                        onClick={() => {
+                            window.location.reload();
+                        }}>
+                            Verify
+                        </button>
+                        <button onClick={() => {
                             verifyAndSubmit()
-                            window.location.reload()
-                        }}
-                    >
-                        Verify and Submit
-                    </button>
-                </div>
-            )
-        }
-        if (vpayment.status === 'Verified') {
-            return (
-                <div>
-                    <button 
-                        onClick={() => {
+                            window.location.reload();
+                        }}>
+                            Verify and Submit</button>
+                    </div>
+                );
+            case 'Verified':
+                return (
+                    <div>
+                        <button onClick={() => {
                             submitPayment()
                             window.location.reload()
-                        }}
-                    >
-                        Submit
-                    </button>
-                </div>
-            )
-        }
-        if (vpayment.status === 'Submitted') {
-            return (
-                <div>
-                    <p>No Options available</p>
-                </div>
-            )
+                        }}>
+                            Submit
+                        </button>
+                    </div>
+                );
+            case 'Submitted':
+                return <p>No Options available</p>;
+            default:
+                return null;
         }
     }
+    
 
 
     const verifyPayment = async () => {
@@ -104,7 +95,6 @@ export default function ViewOne({ user, setUser }) {
             const { message } = await post_data.json();
 
             alert(message);
-            window.location.reload()
         } catch (error) {
             console.error('Error submitting claim:', error);
             alert('An error occurred while submitting the claim');
@@ -124,9 +114,6 @@ export default function ViewOne({ user, setUser }) {
             const { message } = await post_data.json();
 
             alert(message);
-
-            window.location.reload();
-
         } catch (error) {
             console.error('Error submitting claim:', error);
             alert('An error occurred while submitting the claim');
@@ -134,9 +121,15 @@ export default function ViewOne({ user, setUser }) {
     }
 
     const verifyAndSubmit = async () => {
-        verifyPayment();
-        submitPayment();
+        try {
+            await verifyPayment();
+            await submitPayment();
+        } catch (error) {
+            console.error('Error during verification and submission:', error);
+            alert('An error occurred during the process');
+        }
     }
+    
 
     return (
         <div>
