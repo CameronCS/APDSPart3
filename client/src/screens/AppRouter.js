@@ -59,7 +59,7 @@ export default function AppRouter() {
           <Route path='/user/contact-us' element={<ViewAll user={user} setUser={setUser} />} />
 
           <Route path='/employee/' element={<AdminHome user={user} />} />
-          <Route path='/employee/view-all' element={<EViewAll user={user} />} />
+          <Route path='/employee/view-all' element={<EViewAll user={user} setUser={setUser} />} />
           <Route path='/employee/view-submitted' element={<AdminHome user={user} />} />
           <Route path='/employee/view-verified' element={<AdminHome user={user} />} />
 

@@ -5,8 +5,23 @@ import { ObjectId } from "mongodb";
 
 const router = express.Router();
 
-// Retrieve a list of pending payments for verification
 router.get('/', checkAuth, async (req, res) => {
+    console.log('hit');
+    try {
+        const collection = db.collection("payments");
+        const payments = await collection.find({}).toArray();
+        console.log('payments', payments);
+
+        res.status(200).json({payments: payments});
+    } catch (error) {
+        console.error("Error retrieving pending payments:", error);
+        res.status(500).json({ message: "Internal server error." });
+    }
+});
+
+
+// Retrieve a list of pending payments for verification
+router.get('/pending', checkAuth, async (req, res) => {
     try {
         const collection = db.collection("payments");
         const pendingPayments = await collection.find({ status: "Pending" }).toArray();
