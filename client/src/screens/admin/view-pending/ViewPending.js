@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './ViewPending.css'
 
 export default function ViewPending({ user, setUser }) {
     const [pendingPayments, setPendingPayments] = useState([]);

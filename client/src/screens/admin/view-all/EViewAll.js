@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import './EViewAll.css'
 
 export default function EViewAll({ user, setUser }) {
     const [allPayments, setAllPayments] = useState([])
@@ -53,14 +54,14 @@ export default function EViewAll({ user, setUser }) {
     }
 
     return (
-        <div>
-            <h1>All Payments</h1>
-            <div>
+        <div class="payments-container">
+            <h1 class="payments-header">All Payments</h1>
+            <div class="payments-content">
                 {
                     allPayments.length > 0 ? (
-                        <table>
+                        <table class="payments-table">
                             <thead>
-                                <tr>
+                                <tr class="table-header-row">
                                     <th>Amount</th>
                                     <th>Currency</th>
                                     <th>Provider</th>
@@ -76,17 +77,17 @@ export default function EViewAll({ user, setUser }) {
                                 {
                                     allPayments.map(payment => {
                                         return (
-                                            <tr key={payment._id}>
+                                            <tr key={payment._id} class="table-data-row">
                                                 <td>{payment.amount}</td>
                                                 <td>{payment.currency}</td>
                                                 <td>{payment.provider}</td>
                                                 <td>{payment.accountInfo.accountNumber}</td>
                                                 <td>{payment.accountInfo.accountHolder}</td>
                                                 <td>{payment.swiftCode}</td>
-                                                <td>{payment.createdAt}</td>
+                                                <td>{new Date(payment.createdAt).toLocaleString()}</td>
                                                 <td>{payment.status}</td>
                                                 <td>
-                                                    <button onClick={() => {viewSingle(payment._id)}}>
+                                                    <button class="view-button" onClick={() => { viewSingle(payment._id) }}>
                                                         View Payment
                                                     </button>
                                                 </td>
@@ -97,7 +98,7 @@ export default function EViewAll({ user, setUser }) {
                             </tbody>
                         </table>
                     ) : (
-                        <h2> There are no payments at all </h2>
+                        <h2 class="no-payments-message">There are no payments at all</h2>
                     )
                 }
             </div>
