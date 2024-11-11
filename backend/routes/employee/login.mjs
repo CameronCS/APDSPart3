@@ -66,7 +66,7 @@ router.post('/', /* bruteForce.prevent , */ async (req, res) => {
         }
 
         // Create a token upon successful authentication
-        const token = jwt.sign({ username }, process.env.JWT_TOKEN_LEN, { expiresIn: "10s" });
+        const token = jwt.sign({ username }, process.env.JWT_TOKEN_LEN, { expiresIn: "1h" });
 
         // Respond with the token and a success message
         res.status(200).json({ message: "Authentication successful", token, username: employee.username });

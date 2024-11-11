@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 export default function EViewAll({ user, setUser }) {
     const [allPayments, setAllPayments] = useState([])
+    const navigate = useNavigate()
 
     useEffect(() => {
         const storedUser = localStorage.getItem('user');
@@ -45,6 +47,11 @@ export default function EViewAll({ user, setUser }) {
         __fetch();
     }, [user]);
 
+    const viewSingle = (__id) => {
+        console.log(__id);
+        navigate(`/employee/view/${__id}`)
+    }
+
     return (
         <div>
             <h1>All Payments</h1>
@@ -62,6 +69,7 @@ export default function EViewAll({ user, setUser }) {
                                     <th>Swift Code</th>
                                     <th>Created At</th>
                                     <th>Status</th>
+                                    <th>View</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -77,6 +85,11 @@ export default function EViewAll({ user, setUser }) {
                                                 <td>{payment.swiftCode}</td>
                                                 <td>{payment.createdAt}</td>
                                                 <td>{payment.status}</td>
+                                                <td>
+                                                    <button onClick={() => {viewSingle(payment._id)}}>
+                                                        View Payment
+                                                    </button>
+                                                </td>
                                             </tr>
                                         );
                                     })
