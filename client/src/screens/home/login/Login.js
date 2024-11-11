@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import './Login.css'
 import { useNavigate } from 'react-router-dom'
 
@@ -7,6 +7,10 @@ export default function Login({ setUser }) {
   const [h_password, setPassword] = useState("")
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.title = 'Swift Portal - Login';
+  }, []);
 
   const log_user_in = async () => {
     try {
@@ -84,22 +88,31 @@ export default function Login({ setUser }) {
   }
 
   return (
-    <div>
-      <div>
-        <label>Enter username:</label>
-        <input defaultValue={"SwiftUser1"} onChange={(e) => { setUsername(e.target.value) }}></input>
-        <label>Enter password:</label>
-        <input defaultValue={"SwiftUser1!"} onChange={(e) => { setPassword(e.target.value) }}></input>
-        <button onClick={log_user_in}>Submit</button>
-      </div>
-      <div>
-        <label>Enter username:</label>
-        <input defaultValue={"AdminUser1"} onChange={(e) => { setUsername(e.target.value) }}></input>
-        <label>Enter password:</label>
-        <input defaultValue={"AdminUser1!"} onChange={(e) => { setPassword(e.target.value) }}></input>
-        <button onClick={log_admin_in}>Submit</button>
-      </div>
+<div className="login-div">
+  <div className="navspace">
+    {/* This space is for the fixed header */}
+  </div>
+  <div className="login-header">
+      <h1 className="site-title">Login</h1>
+  </div>
+  <div className="login-forms">
+    <div className="login-form-user">
+      <img src="/images/loginuser.png" alt="Swift Logo" className="loginphoto" />
+      <label>Enter username:</label>
+      <input defaultValue={"SwiftUser1"} onChange={(e) => { setUsername(e.target.value) }}></input>
+      <label>Enter password:</label>
+      <input defaultValue={"SwiftUser1!"} onChange={(e) => { setPassword(e.target.value) }}></input>
+      <button onClick={log_user_in}>Log in as User</button>
     </div>
-
+    <div className="login-form-emp">
+    <img src="/images/loginadmin.png" alt="Swift Logo" className="loginphoto" />
+      <label>Enter username:</label>
+      <input defaultValue={"AdminUser1"} onChange={(e) => { setUsername(e.target.value) }}></input>
+      <label>Enter password:</label>
+      <input defaultValue={"AdminUser1!"} onChange={(e) => { setPassword(e.target.value) }}></input>
+      <button onClick={log_admin_in}>Log in as Admin</button>
+    </div>
+  </div>
+</div>
   )
 }

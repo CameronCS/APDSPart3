@@ -15,7 +15,7 @@ export default function NavBar({ user_type }) {
   };
 
   return (
-    <header className="navbar">
+    <header className="navbar-header">
       <div className="logo-container">
         <img src="/images/swift-logo.png" alt="Swift Logo" className="logo" />
       </div>
