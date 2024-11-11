@@ -21,6 +21,7 @@ import ViewPending from "./admin/view-pending/ViewPending";
 import ViewSubmitted from "./admin/view-submitted/ViewSubmitted";
 import ViewVerified from "./admin/view-verified/ViewVerified";
 import ViewOne from "./admin/view-specific/ViewOne";
+import UViewOne from "./client/viewone/UViewOne";
 
 export default function AppRouter() {
   const [user, setUser] = useState(() => {
@@ -63,6 +64,7 @@ export default function AppRouter() {
           <Route path='/user/view-all' element={<ViewAll user={user} setUser={setUser} />} />
           <Route path='/user/faq' element={<Ufaq user={user} setUser={setUser} />} />
           <Route path='/user/contact' element={<UContactUs user={user} setUser={setUser} />} />
+          <Route path='/user/view/:id' element={<UViewOne user={user} setUser={setUser} />} />
 
           <Route path='/employee/' element={<AdminHome user={user} />} />
           <Route path='/employee/view-all' element={<EViewAll user={user} setUser={setUser} />} />
