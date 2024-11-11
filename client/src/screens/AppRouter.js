@@ -6,7 +6,9 @@ import HomeScreen from "./home/home/HomeScreen";
 import Login from "./home/login/Login";
 import AboutUs from "./home/aboutscreen/AboutUs";
 import Faq from "./home/faq/Faq";
+import Ufaq from "./client/faq/Ufaq";
 import ContactUs from "./home/contactus/ContactUs";
+import UContactUs from "./client/contact/UContactUs";
 import { useState, useEffect } from "react";
 
 import ClientHome from "./client/home/ClientHome";
@@ -55,8 +57,8 @@ export default function AppRouter() {
           <Route path='/user/' element={<ClientHome user={user} setUser={setUser} />} />
           <Route path='/user/submit' element={<Submit user={user} setUser={setUser} />} />
           <Route path='/user/view-all' element={<ViewAll user={user} setUser={setUser} />} />
-          <Route path='/user/faq' element={<ViewAll user={user} setUser={setUser} />} />
-          <Route path='/user/contact-us' element={<ViewAll user={user} setUser={setUser} />} />
+          <Route path='/user/faq' element={<Ufaq user={user} setUser={setUser} />} />
+          <Route path='/user/contact' element={<UContactUs user={user} setUser={setUser} />} />
 
           <Route path='/employee/' element={<AdminHome user={user} />} />
           <Route path='/employee/view-all' element={<EViewAll user={user} setUser={setUser} />} />
