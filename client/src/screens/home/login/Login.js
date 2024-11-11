@@ -3,8 +3,8 @@ import './Login.css'
 import { useNavigate } from 'react-router-dom'
 
 export default function Login({ setUser }) {
-  const [h_username, setUsername] = useState("SwiftUser1")
-  const [h_password, setPassword] = useState("SwiftUser1!")
+  const [h_username, setUsername] = useState("AdminUser1")
+  const [h_password, setPassword] = useState("AdminUser1!")
 
   const navigate = useNavigate();
 

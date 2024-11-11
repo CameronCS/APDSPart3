@@ -17,6 +17,10 @@ import ViewAll from "./client/viewall/ViewAll";
 import EViewAll from "./admin/view-all/EViewAll";
 import Logout from "./shared/Logout/Logout";
 import Submit from "./client/submit/Submit";
+import ViewPending from "./admin/view-pending/ViewPending";
+import ViewSubmitted from "./admin/view-submitted/ViewSubmitted";
+import ViewVerified from "./admin/view-verified/ViewVerified";
+import ViewOne from "./admin/view-specific/ViewOne";
 
 export default function AppRouter() {
   const [user, setUser] = useState(() => {
@@ -61,9 +65,11 @@ export default function AppRouter() {
           <Route path='/user/contact' element={<UContactUs user={user} setUser={setUser} />} />
 
           <Route path='/employee/' element={<AdminHome user={user} />} />
-          <Route path='/employee/view-all' element={<EViewAll user={user} />} />
-          <Route path='/employee/view-submitted' element={<AdminHome user={user} />} />
-          <Route path='/employee/view-verified' element={<AdminHome user={user} />} />
+          <Route path='/employee/view-all' element={<EViewAll user={user} setUser={setUser} />} />
+          <Route path='/employee/view-pending' element={<ViewPending user={user} setUser={setUser} />} />
+          <Route path='/employee/view-submitted' element={<ViewSubmitted user={user} setUser={setUser} />} />
+          <Route path='/employee/view-verified' element={<ViewVerified user={user} setUser={setUser} />} />
+          <Route path='/employee/view/:id' element={<ViewOne user={user} setUser={setUser} />} />
 
           <Route path='/log-out' element={<Logout setUser={setUser} />} />
           <Route path='/404' element={<NotFound />} />
