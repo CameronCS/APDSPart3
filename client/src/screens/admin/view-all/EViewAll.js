@@ -54,21 +54,21 @@ export default function EViewAll({ user, setUser }) {
     }
 
     return (
-        <div class="payments-container">
-            <h1 class="payments-header">All Payments</h1>
-            <div class="payments-content">
+        <div className="payments-container">
+            <h1 className="payments-header">All Payments</h1>
+            <div className="payments-content">
                 {
                     allPayments.length > 0 ? (
-                        <table class="payments-table">
+                        <table className="payments-table">
                             <thead>
-                                <tr class="table-header-row">
+                                <tr className="table-header-row">
                                     <th>Amount</th>
                                     <th>Currency</th>
                                     <th>Provider</th>
                                     <th>Account Number</th>
                                     <th>Account Holder</th>
                                     <th>Swift Code</th>
-                                    <th class="date">Created At</th>
+                                    <th className="date">Created At</th>
                                     <th>Status</th>
                                     <th>View</th>
                                 </tr>
@@ -77,17 +77,17 @@ export default function EViewAll({ user, setUser }) {
                                 {
                                     allPayments.map(payment => {
                                         return (
-                                            <tr key={payment._id} class="table-data-row">
+                                            <tr key={payment._id} claclassNamess="table-data-row">
                                                 <td>{payment.amount}</td>
                                                 <td>{payment.currency}</td>
                                                 <td>{payment.provider}</td>
                                                 <td>{payment.accountInfo.accountNumber}</td>
                                                 <td>{payment.accountInfo.accountHolder}</td>
                                                 <td>{payment.swiftCode}</td>
-                                                <td class="date">{new Date(payment.createdAt).toLocaleString()}</td>
+                                                <td className="date">{new Date(payment.createdAt).toLocaleString()}</td>
                                                 <td>{payment.status}</td>
                                                 <td>
-                                                    <button class="viewButton" onClick={() => { viewSingle(payment._id) }}>
+                                                    <button className="viewButton" onClick={() => { viewSingle(payment._id) }}>
                                                         View Payment
                                                     </button>
                                                 </td>
@@ -98,7 +98,7 @@ export default function EViewAll({ user, setUser }) {
                             </tbody>
                         </table>
                     ) : (
-                        <h2 class="no-payments-message">There are no payments at all</h2>
+                        <h2 className="no-payments-message">There are no payments at all</h2>
                     )
                 }
             </div>

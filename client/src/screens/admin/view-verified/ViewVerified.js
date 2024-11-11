@@ -71,11 +71,11 @@ export default function ViewPending({ user, setUser }) {
     };
 
     return (
-        <div class="payments-container">
+        <div className="payments-container">
             <h1>All Pending Payments</h1>
             <div>
                 {pendingPayments.length > 0 ? (
-                    <table class="payments-table">
+                    <table className="payments-table">
                         <thead>
                             <tr>
                                 <th>Amount</th>
@@ -84,31 +84,31 @@ export default function ViewPending({ user, setUser }) {
                                 <th>Account Number</th>
                                 <th>Account Holder</th>
                                 <th>Swift Code</th>
-                                <th class="date">Created At</th>
+                                <th className="date">Created At</th>
                                 <th>Status</th>
                                 <th>Submit</th>
                             </tr>
                         </thead>
                         <tbody>
                             {pendingPayments.map((pm) => (
-                                <tr key={pm._id} class="table-data-row">
+                                <tr key={pm._id} className="table-data-row">
                                     <td>{pm.amount}</td>
                                     <td>{pm.currency}</td>
                                     <td>{pm.provider}</td>
                                     <td>{pm.accountInfo.accountNumber}</td>
                                     <td>{pm.accountInfo.accountHolder}</td>
                                     <td>{pm.swiftCode}</td>
-                                    <td class="date">{new Date(pm.createdAt).toLocaleString()}</td>
+                                    <td className="date">{new Date(pm.createdAt).toLocaleString()}</td>
                                     <td>{pm.status}</td>
                                     <td>
-                                        <button class="viewButton" onClick={() => submitClaim(pm._id)}>Submit</button>
+                                        <button className="viewButton" onClick={() => submitClaim(pm._id)}>Submit</button>
                                     </td>
                                 </tr>
                             ))}
                         </tbody>
                     </table>
                 ) : (
-                    <h2 class="no-payments">No Verified Payments found!</h2>
+                    <h2 className="no-payments">No Verified Payments found!</h2>
                 )}
             </div>
         </div>

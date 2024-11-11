@@ -49,14 +49,14 @@ export default function ViewOne({ user, setUser }) {
         switch (vpayment.status) {
             case 'Pending':
                 return (
-                    <div>
-                        <button onClick={() => {
+                    <div className='Buttons'>
+                        <button className='viewButton' onClick={() => {
                             verifyPayment()
                             window.location.reload();
                         }}>
                             Verify
                         </button>
-                        <button onClick={() => {
+                        <button className='viewButton' onClick={() => {
                             verifyAndSubmit()
                             window.location.reload();
                         }}>
@@ -66,7 +66,7 @@ export default function ViewOne({ user, setUser }) {
             case 'Verified':
                 return (
                     <div>
-                        <button onClick={() => {
+                        <button className='viewButton' onClick={() => {
                             submitPayment()
                             window.location.reload()
                         }}>
@@ -133,55 +133,55 @@ export default function ViewOne({ user, setUser }) {
     
 
     return (
-        <div class="payment-details-container">
+        <div className="payment-details-container">
             <div className="navspace">
                 {/* This space is for the fixed header */}
             </div>
-            <h1 class="payment-id-header">Viewing Payment ID: {__id}</h1>
-            <div class="payment-section">
-                <h2 class="section-title">Payment Info</h2>
-                <div class="info-block">
-                    <p class="info-item">
-                        <h3 class="sub-title">Amount Info</h3>
-                        <span class="label">Amount: </span>
-                        <span class="value">{vpayment.amount}</span>
+            <h1 className="payment-id-header">Viewing Payment ID: {__id}</h1>
+            <div className="payment-section">
+                <h2 className="section-title">Payment Info</h2>
+                <div className="info-block">
+                    <p className="info-item">
+                        <span className="sub-title">Amount Info</span>
+                        <span className="label">Amount: </span>
+                        <span className="value">{vpayment.amount}</span>
                     </p>
-                    <p class="info-item">
-                        <span class="label">Currency: </span>
-                        <span class="value">{vpayment.currency}</span>
+                    <p className="info-item">
+                        <span className="label">Currency: </span>
+                        <span className="value">{vpayment.currency}</span>
                     </p>
-                    <p class="info-item">
-                        <span class="label">Provider: </span>
-                        <span class="value">{vpayment.provider}</span>
-                    </p>
-                </div>
-
-                <div class="account-info">
-                    <h2 class="section-title">Account Information</h2>
-                    <p class="info-item">
-                        <span class="label">Account Number: </span>
-                        <span class="value">{vpayment.accountInfo.accountNumber}</span>
-                    </p>
-                    <p class="info-item">
-                        <span class="label">Account Holder: </span>
-                        <span class="value">{vpayment.accountInfo.accountHolder}</span>
+                    <p className="info-item">
+                        <span className="label">Provider: </span>
+                        <span className="value">{vpayment.provider}</span>
                     </p>
                 </div>
 
-                <div class="other-data">
-                    <h2 class="section-title">Other Data</h2>
-                    <p class="info-item">
-                        <span class="label">Created At: </span>
-                        <span class="value">{new Date(vpayment.createdAt).toLocaleString()}</span>
+                <div className="account-info">
+                    <h2 className="section-title">Account Information</h2>
+                    <p className="info-item">
+                        <span className="label">Account Number: </span>
+                        <span className="value">{vpayment.accountInfo.accountNumber}</span>
                     </p>
-                    <p class="info-item">
-                        <span class="label">Status: </span>
-                        <span class="value">{vpayment.status}</span>
+                    <p className="info-item">
+                        <span className="label">Account Holder: </span>
+                        <span className="value">{vpayment.accountInfo.accountHolder}</span>
                     </p>
                 </div>
 
-                <div class="user-options">
-                    <h2 class="section-title">User Options</h2>
+                <div className="other-data">
+                    <h2 className="section-title">Other Data</h2>
+                    <p className="info-item">
+                        <span className="label">Created At: </span>
+                        <span className="value">{new Date(vpayment.createdAt).toLocaleString()}</span>
+                    </p>
+                    <p className="info-item">
+                        <span className="label">Status: </span>
+                        <span className="value">{vpayment.status}</span>
+                    </p>
+                </div>
+
+                <div className="user-options">
+                    <h2 className="section-title">User Options</h2>
                     {render_user_options()}
                 </div>
             </div>
