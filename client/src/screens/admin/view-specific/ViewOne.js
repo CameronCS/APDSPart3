@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import "./ViewOne.css"
 
 export default function ViewOne({ user, setUser }) {
     const url = window.location.href;
@@ -48,7 +49,7 @@ export default function ViewOne({ user, setUser }) {
         if (vpayment.status === 'Pending') {
             return (
                 <div>
-                    <button 
+                    <button
                         onClick={() => {
                             verifyPayment()
                             window.location.reload()
@@ -56,7 +57,7 @@ export default function ViewOne({ user, setUser }) {
                     >
                         Verify
                     </button>
-                    <button 
+                    <button
                         onClick={() => {
                             verifyAndSubmit()
                             window.location.reload()
@@ -70,7 +71,7 @@ export default function ViewOne({ user, setUser }) {
         if (vpayment.status === 'Verified') {
             return (
                 <div>
-                    <button 
+                    <button
                         onClick={() => {
                             submitPayment()
                             window.location.reload()
@@ -139,52 +140,55 @@ export default function ViewOne({ user, setUser }) {
     }
 
     return (
-        <div>
-            <h1>Viewing Payment ID: {__id}</h1>
-            <div>
-                <h2>Payment Info</h2>
-                <div>
-                    <p>
-                        <h3>Amount Info</h3>
-                        <span>Amount: </span>
-                        <span>{vpayment.amount}</span>
+        <div class="payment-details-container">
+            <div className="navspace">
+                {/* This space is for the fixed header */}
+            </div>
+            <h1 class="payment-id-header">Viewing Payment ID: {__id}</h1>
+            <div class="payment-section">
+                <h2 class="section-title">Payment Info</h2>
+                <div class="info-block">
+                    <p class="info-item">
+                        <h3 class="sub-title">Amount Info</h3>
+                        <span class="label">Amount: </span>
+                        <span class="value">{vpayment.amount}</span>
                     </p>
-                    <p>
-                        <span>Currency: </span>
-                        <span>{vpayment.currency}</span>
+                    <p class="info-item">
+                        <span class="label">Currency: </span>
+                        <span class="value">{vpayment.currency}</span>
                     </p>
-                    <p>
-                        <span>Provider: </span>
-                        <span>{vpayment.provider}</span>
-                    </p>
-                </div>
-
-                <div>
-                    <h2>Account Information</h2>
-                    <p>
-                        <span>Account Number: </span>
-                        <span>{vpayment.accountInfo.accountNumber}</span>
-                    </p>
-                    <p>
-                        <span>Account Holder: </span>
-                        <span>{vpayment.accountInfo.accountHolder}</span>
+                    <p class="info-item">
+                        <span class="label">Provider: </span>
+                        <span class="value">{vpayment.provider}</span>
                     </p>
                 </div>
 
-                <div>
-                    <h2>Other Data</h2>
-                    <p>
-                        <span>Created At: </span>
-                        <span>{new Date(vpayment.createdAt).toLocaleString()}</span>
+                <div class="account-info">
+                    <h2 class="section-title">Account Information</h2>
+                    <p class="info-item">
+                        <span class="label">Account Number: </span>
+                        <span class="value">{vpayment.accountInfo.accountNumber}</span>
                     </p>
-                    <p>
-                        <span>Status: </span>
-                        <span>{vpayment.status}</span>
+                    <p class="info-item">
+                        <span class="label">Account Holder: </span>
+                        <span class="value">{vpayment.accountInfo.accountHolder}</span>
                     </p>
                 </div>
 
-                <div>
-                    <h2>User Options</h2>
+                <div class="other-data">
+                    <h2 class="section-title">Other Data</h2>
+                    <p class="info-item">
+                        <span class="label">Created At: </span>
+                        <span class="value">{new Date(vpayment.createdAt).toLocaleString()}</span>
+                    </p>
+                    <p class="info-item">
+                        <span class="label">Status: </span>
+                        <span class="value">{vpayment.status}</span>
+                    </p>
+                </div>
+
+                <div class="user-options">
+                    <h2 class="section-title">User Options</h2>
                     {render_user_options()}
                 </div>
             </div>

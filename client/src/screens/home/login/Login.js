@@ -102,7 +102,7 @@ export default function Login({ setUser }) {
       <input defaultValue={"SwiftUser1"} onChange={(e) => { setUsername(e.target.value) }}></input>
       <label>Enter password:</label>
       <input type='password' defaultValue={"SwiftUser1!"} onChange={(e) => { setPassword(e.target.value) }}></input>
-      <button onClick={log_user_in}>Log in :)</button>
+      <button className='loginbutton' onClick={log_user_in}>Log in :)</button>
     </div>
   </div>
 </div>

@@ -1,0 +1,62 @@
+.payment-details-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Header styling */
+.payment-id-header {
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Section styling */
+.payment-section {
+    padding: 10px 0;
+}
+
+.section-title {
+    font-size: 1.4em;
+    color: #444;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+/* Info block styling */
+.info-block, .account-info, .other-data, .user-options {
+    margin-top: 15px;
+}
+
+/* Info item styling */
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1em;
+    color: #555;
+}
+
+/* Label and value styling */
+.label {
+    font-weight: bold;
+    color: #666;
+}
+
+.value {
+    color: #333;
+}
+
+/* Subtitle styling */
+.sub-title {
+    font-size: 1.2em;
+    color: #444;
+    margin-bottom: 5px;
+}

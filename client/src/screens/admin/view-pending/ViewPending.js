@@ -67,11 +67,11 @@ export default function ViewPending({ user, setUser }) {
     };
 
     return (
-        <div>
+        <div class="payments-container">
             <h1>All Pending Payments</h1>
             <div>
                 {pendingPayments.length > 0 ? (
-                    <table>
+                    <table class="payments-table">
                         <thead>
                             <tr>
                                 <th>Amount</th>
@@ -80,7 +80,7 @@ export default function ViewPending({ user, setUser }) {
                                 <th>Account Number</th>
                                 <th>Account Holder</th>
                                 <th>Swift Code</th>
-                                <th>Created At</th>
+                                <th class="date">Created At</th>
                                 <th>Status</th>
                                 <th>Submit</th>
                             </tr>
@@ -94,17 +94,17 @@ export default function ViewPending({ user, setUser }) {
                                     <td>{pm.accountInfo.accountNumber}</td>
                                     <td>{pm.accountInfo.accountHolder}</td>
                                     <td>{pm.swiftCode}</td>
-                                    <td>{pm.createdAt}</td>
+                                    <td class="date">{new Date(pm.createdAt).toLocaleString()}</td>
                                     <td>{pm.status}</td>
                                     <td>
-                                        <button onClick={() => verifyClaim(pm._id)}>Verify</button>
+                                        <button class="viewButton" onClick={() => verifyClaim(pm._id)}>Verify</button>
                                     </td>
                                 </tr>
                             ))}
                         </tbody>
                     </table>
                 ) : (
-                    <h2>No Pending Payments found!</h2>
+                    <h2 class="no-payments">No Pending Payments found!</h2>
                 )}
             </div>
         </div>

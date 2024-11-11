@@ -58,12 +58,12 @@ input {
 }
 
 input:focus {
-    border-color: #007bff;
+    border-color: #4E3B31;
     outline: none;
 }
 
 .submit-btn {
-    background-color: #007bff;
+    background-color: #4E3B31;
     color: white;
     border: none;
     padding: 12px;
@@ -74,5 +74,5 @@ input:focus {
 }
 
 .submit-btn:hover {
-    background-color: #0056b3;
+    background-color: #221914;
 }

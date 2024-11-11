@@ -68,7 +68,7 @@ export default function EViewAll({ user, setUser }) {
                                     <th>Account Number</th>
                                     <th>Account Holder</th>
                                     <th>Swift Code</th>
-                                    <th>Created At</th>
+                                    <th class="date">Created At</th>
                                     <th>Status</th>
                                     <th>View</th>
                                 </tr>
@@ -84,10 +84,10 @@ export default function EViewAll({ user, setUser }) {
                                                 <td>{payment.accountInfo.accountNumber}</td>
                                                 <td>{payment.accountInfo.accountHolder}</td>
                                                 <td>{payment.swiftCode}</td>
-                                                <td>{new Date(payment.createdAt).toLocaleString()}</td>
+                                                <td class="date">{new Date(payment.createdAt).toLocaleString()}</td>
                                                 <td>{payment.status}</td>
                                                 <td>
-                                                    <button class="view-button" onClick={() => { viewSingle(payment._id) }}>
+                                                    <button class="viewButton" onClick={() => { viewSingle(payment._id) }}>
                                                         View Payment
                                                     </button>
                                                 </td>
