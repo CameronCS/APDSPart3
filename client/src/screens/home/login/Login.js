@@ -98,7 +98,7 @@ export default function Login({ setUser }) {
       <input defaultValue={"SwiftUser1"} onChange={(e) => { setUsername(e.target.value) }}></input>
       <label>Enter password:</label>
       <input defaultValue={"SwiftUser1!"} onChange={(e) => { setPassword(e.target.value) }}></input>
-      <button onClick={log_user_in}>Submit</button>
+      <button onClick={log_user_in}>Log in as User</button>
     </div>
     <div className="login-form-emp">
     <img src="/images/loginadmin.png" alt="Swift Logo" className="loginphoto" />
@@ -106,7 +106,7 @@ export default function Login({ setUser }) {
       <input defaultValue={"AdminUser1"} onChange={(e) => { setUsername(e.target.value) }}></input>
       <label>Enter password:</label>
       <input defaultValue={"AdminUser1!"} onChange={(e) => { setPassword(e.target.value) }}></input>
-      <button onClick={log_admin_in}>Submit</button>
+      <button onClick={log_admin_in}>Log in as Admin</button>
     </div>
   </div>
 </div>

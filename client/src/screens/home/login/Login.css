@@ -1,10 +1,10 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #FFFFFF;
-    color: #4E3B31;
-  }
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  color: #4E3B31;
+  
+}
   
   .navspace {
     height: 4rem;
@@ -12,25 +12,35 @@ body {
   
   .login-div {
     text-align: center;
+    background: 
+    linear-gradient(
+      rgba(255, 255, 255, 0.6), 
+      rgba(255, 255, 255, 0.6)
+    ), 
+    url('/public/images/background.png'); 
+    background-size: cover;
+    background-position: center; 
+    background-size: cover;  
+    background-position: center; 
   }
   
   .login-forms {
     display: flex;
-    justify-content: center; /* Center the forms horizontally */
-    gap: 2rem; /* Space between the forms */
+    justify-content: center; 
+    gap: 2rem; 
     padding: 0rem 2rem 2rem 2rem;
-    height: 80vh; /* Take up 80% of the screen width */
-    margin: 0 auto; /* Center the login forms */
+    height: 80vh;
+    margin: 0 auto;
   }
   
   .login-form-user, .login-form-emp {
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1; /* Each form will take up equal width */
-    max-width: 450px; /* Max width for each form */
+    flex: 1;
+    max-width: 450px; 
     padding: 2rem;
-    background-color: #E8E0D2;
+    background-color: #fff;
     color: #4E3B31;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -51,6 +61,7 @@ body {
     padding: 0.5rem;
     margin-top: 0.5rem;
     margin-bottom: 1rem;
+    background-color: #e0e0e0;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;

@@ -7,44 +7,26 @@ export default function AboutUs() {
   }, []);
 
   return (
-    <div className='about-us-page'>
-      <h1 className='au-h1'>About Us</h1>
-      <div class="side-wrapper">
-        <div className='au-lhs'>
-          <div className='au-lhs-one'>
-            <h2>Who Are we?</h2>
-            <p>Swift Banking is a pristene banking enterprise designed to make baking for you a lot easier</p>
-            <p>Swift is designed to ensure that contrants and claims get approved quickly and easily</p>
-          </div>
-          <div className='au-lhs-two'>
-            <h2>Why Choose Us</h2>
-            <p>Swift is designed to streamline the banking process</p>
-            <p>Do labore consequat veniam elit sunt duis sint reprehenderit.</p>
-            <p>Do labore consequat veniam elit sunt duis sint reprehenderit.</p>
-            <p>Do labore consequat veniam elit sunt duis sint reprehenderit.</p>
-          </div>
-        </div>
-        <div className='au-rhs'>
-          <div className='au-rhs-one'>
-            <h2>Aliqua nisi id tempor qui cillum excepteur est id.</h2>
-            <p>Sit excepteur officia aliqua sunt sit eiusmod.</p>
-            <p>Consequat quis mollit cillum nostrud commodo est.</p>
-            <p>Laborum eu voluptate amet cupidatat.</p>
-          </div>
-          <div className='au-rhs-two'>
-            <h2>Nisi est in aliquip amet esse elit ea sint pariatur mollit sit aliqua irure proident.</h2>
-            <p>Eu velit irure quis laboris est dolore dolor elit.</p>
-            <p>Ad officia irure labore et excepteur voluptate labore cillum ea sunt duis.</p>
-            <ul>
-              <ol>Do anim aliqua enim anim Lorem exercitation adipisicing irure proident voluptate dolore elit elit eu.</ol>
-              <ol>Do anim aliqua enim anim Lorem exercitation adipisicing irure proident voluptate dolore elit elit eu.</ol>
-              <ol>Do anim aliqua enim anim Lorem exercitation adipisicing irure proident voluptate dolore elit elit eu.</ol>
-              <ol>Do anim aliqua enim anim Lorem exercitation adipisicing irure proident voluptate dolore elit elit eu.</ol>
-              <ol>Do anim aliqua enim anim Lorem exercitation adipisicing irure proident voluptate dolore elit elit eu.</ol>
-            </ul>
-          </div>
-        </div>
+    <div className="about-us-page">
+      <div className="navspace">
+        {/* This space is for the fixed header */}
       </div>
-    </div>
+      <h1 className="site-title">About Us</h1>
+      <section className="welcome-section">
+        <h1>Welcome to SWIFT: A platform for secure payemnts!</h1>
+        <p>Here at SWIFT, we prize ourselves on 20 years of hard work, to allow our customers only the best when it comes to secure payment!  </p>
+        <p>Come and see who we are, and join the journey with us!</p>    
+      </section>
+      <section className="content-section">
+        <div className="team-info">
+         <h2>Our Team</h2>
+          <p>We bring together creativity, experience, and innovation to craft the future.</p>
+        </div>
+        <div className="mission-info">
+          <h2>Our Mission</h2>
+          <p>We aim to revolutionize the industry with cutting-edge solutions that empower businesses.</p>
+        </div>
+      </section>
+</div>
   )
 }

@@ -1,15 +1,24 @@
 /* General Page Styling */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #FFFFFF; /* Clean white background */
-    color: #4E3B31; /* Dark contrast for text */
-  }
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  color: #4E3B31;
+}
   
   .landing-page {
     text-align: center;
-    overflow-x: hidden; /* Hide horizontal overflow */
+    overflow-x: hidden;
+    background: 
+    linear-gradient(
+      rgba(255, 255, 255, 0.6), 
+      rgba(255, 255, 255, 0.6)
+    ), 
+    url('/public/images/background.png'); 
+    background-size: cover;
+    background-position: center; 
+    background-size: cover;  
+    background-position: center; 
   }
   
   /* Hero Section */
@@ -18,7 +27,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 4rem 2rem;
-    background-color: #E8E0D2; /* Matching the brand color */
+    background-color: #fff;
     color: #4E3B31;
   }
   
@@ -31,7 +40,7 @@ body {
   .site-title {
     font-size: 4rem;
     font-weight: bold;
-    color: #8b7a6a; /* Logo color */
+    color: #8b7a6a;
     margin-bottom: 1rem;
   }
   
@@ -59,7 +68,6 @@ body {
   /* Features Section */
   .features-section {
     padding: 4rem 2rem;
-    background-color: #FFFFFF;
     text-align: center;
   }
   
@@ -76,7 +84,7 @@ body {
   }
   
   .feature-card {
-    background-color: #F5F5F5;
+    background-color: #fff;
     border-radius: 10px;
     padding: 2rem;
     width: 300px;
@@ -98,7 +106,7 @@ body {
   /* Quick Links Section */
   .quick-links-section {
     padding: 2rem 2rem;
-    background-color: #E8E0D2;
+    background-color: #fff;
   }
   
   .quick-links {
@@ -111,13 +119,13 @@ body {
   
   .link-item {
     font-size: 1.2rem;
-    color: #4E3B31; /* Dark color for links */
+    color: #4E3B31;
     text-decoration: none;
     transition: color 0.3s ease;
   }
   
   .link-item:hover {
-    color: #8b7a6a; /* Change color on hover */
+    color: #8b7a6a;
     text-decoration: underline;
   }
   
