@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import './ViewAll.css'
 
 export default function ViewAll({ user, setUser }) {
   const [payments, setPayments] = useState([])
@@ -40,10 +41,13 @@ export default function ViewAll({ user, setUser }) {
   console.log(payments);
 
   return (
-    <div>
+    <div class="payments-container">
+      <div className="navspace">
+        {/* This space is for the fixed header */}
+      </div>
       <h1>Your Payments</h1>
       {payments.length > 0 ? (
-        <table>
+        <table class="payments-table">
           <thead>
             <tr>
               <th>Amount</th>
@@ -63,14 +67,14 @@ export default function ViewAll({ user, setUser }) {
                 <td>{payment.provider}</td>
                 <td>{payment.accountInfo.accountHolder}</td>
                 <td>{payment.accountInfo.accountNumber}</td>
-                <td>{payment.createdAt}</td>
+                <td class="date">{new Date(payment.createdAt).toLocaleString()}</td>
                 <td>{payment.status}</td>
               </tr>
             ))}
           </tbody>
         </table>
       ) : (
-        <div>
+        <div class="no-payments">
           <h2>You Have No Payments</h2>
         </div>
       )}
