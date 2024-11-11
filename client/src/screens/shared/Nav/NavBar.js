@@ -4,14 +4,13 @@ import EmployeeNav from "./EmployeeNav/EmployeeNav"
 import UserNav from "./UserNav/UserNav"
 import './NavBar.css'; // Import your CSS file
 
-export default function NavBar({ user_type, setUser }) {
+export default function NavBar({ user_type }) {
   const RenderNav = () => {
-    if (user_type === 'employee') {
-      return <EmployeeNav setUser={setUser} />;
-    } else if (user_type === 'user') {
-      return <UserNav setUser={setUser} />;
-    } else {
-      return <Default />;
+    switch (user_type) {
+      case 0 : return <Default />
+      case 1 : return <UserNav />
+      case 2 : return <EmployeeNav />
+      default: return <Default />
     }
   };
 

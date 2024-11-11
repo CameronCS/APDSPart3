@@ -7,10 +7,10 @@ const router = express.Router();
 
 // Create a new payment
 router.post('/', checkAuth, async (req, res) => {
-    const { amount, currency, provider, accountInfo, swiftCode } = req.body;
+    const { amount, currency, provider, accountInfo, swiftCode, userID } = req.body;
 
     // Basic input validation
-    if (!amount || !currency || !provider || !accountInfo || !swiftCode) {
+    if (!amount || !currency || !provider || !accountInfo || !swiftCode || !userID) {
         return res.status(400).json({ message: "All fields are required." });
     }
 
@@ -21,6 +21,7 @@ router.post('/', checkAuth, async (req, res) => {
             provider,
             accountInfo,
             swiftCode,
+            userID,
             createdAt: new Date(),
             status: "Pending" // Initial status
         };
@@ -35,13 +36,24 @@ router.post('/', checkAuth, async (req, res) => {
     }
 });
 
-// Retrieve all payments
-router.get('/', checkAuth, async (req, res) => {
+// Retrieve all payments by userID
+router.get('/:pid', checkAuth, async (req, res) => {
+    const { pid } = req.params;
+    console.log(pid);
+    
     try {
+        // Query payments where userID matches pid
         const collection = db.collection("payments");
-        const payments = await collection.find({}).toArray();
+        const payments = await collection.find({ userID: pid }).toArray();
 
-        res.status(200).json(payments);
+        console.log(payments);
+        
+        if (payments.length > 0) {
+            console.log('here');
+            res.status(200).json({payments: payments});
+        } else {
+            res.status(404).json({ message: "No payments found for this user" });
+        }
     } catch (error) {
         console.error("Error retrieving payments:", error);
         res.status(500).json({ message: "Internal server error." });

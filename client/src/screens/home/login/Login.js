@@ -21,7 +21,7 @@ export default function Login({ setUser }) {
         })
       })
 
-      const { isadmin, username, message, token } = await result.json();
+      const { _id, isadmin, username, message, token } = await result.json();
 
       if (result.ok) {
         if (isadmin === 'true') {
@@ -29,12 +29,14 @@ export default function Login({ setUser }) {
           await log_admin_in()
         } else {
           const user = {
+            _id: _id,
             username: username,
             token: token,
             isadmin: isadmin
           }
           console.log(user);
           setUser(user)
+          localStorage.setItem('user', JSON.stringify(user))
           navigate('/user')
         }
       } else {
@@ -59,15 +61,17 @@ export default function Login({ setUser }) {
         })
       })
 
-      const { username, token, message } = await result.json()
+      const { _id, username, token, message } = await result.json()
       
       if (result.ok) {
         console.log('username ', username, ' token ', token);
         const user = {
+          _id: _id,
           username,
           token,
           isadmin: true
         }
+        localStorage.setItem('user', JSON.stringify(user))
         setUser(user)
         navigate('/employee')
       } else {

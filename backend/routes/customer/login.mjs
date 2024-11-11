@@ -41,7 +41,7 @@ router.post('/', /* bruteForce.prevent, */ async (req, res) => {
             message: 'Authentication Successful',
             
         }
-        return res.status(200).json({ message: "Authentication Successful", token: token, username: user.username, isadmin: user.isadmin });
+        return res.status(200).json({ message: "Authentication Successful", _id: user._id, token: token, username: user.username, isadmin: user.isadmin });
     }
 });
 
