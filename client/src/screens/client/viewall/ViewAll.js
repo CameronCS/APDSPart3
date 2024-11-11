@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import './ViewAll.css'
+import { useNavigate } from 'react-router-dom';
 
 export default function ViewAll({ user, setUser }) {
   const [payments, setPayments] = useState([])
+  const navigate = useNavigate()
+
   useEffect(() => {
     setUser(JSON.parse(localStorage.getItem('user')))
   }, [setUser]);
@@ -57,6 +60,7 @@ export default function ViewAll({ user, setUser }) {
               <th>Account Number</th>
               <th>Created At</th>
               <th>Status</th>
+              <th>View</th>
             </tr>
           </thead>
           <tbody>
@@ -69,6 +73,13 @@ export default function ViewAll({ user, setUser }) {
                 <td>{payment.accountInfo.accountNumber}</td>
                 <td class="date">{new Date(payment.createdAt).toLocaleString()}</td>
                 <td>{payment.status}</td>
+                <td>
+                  <button onClick={() => {
+                    navigate(`/user/view/${payment._id}`)
+                  }}>
+                    View
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
