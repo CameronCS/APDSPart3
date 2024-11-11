@@ -18,7 +18,7 @@ body {
     display: flex;
     justify-content: center; /* Center the forms horizontally */
     gap: 2rem; /* Space between the forms */
-    padding: 2rem;
+    padding: 0rem 2rem 2rem 2rem;
     height: 80vh; /* Take up 80% of the screen width */
     margin: 0 auto; /* Center the login forms */
   }

@@ -88,6 +88,9 @@ export default function Login({ setUser }) {
   <div className="navspace">
     {/* This space is for the fixed header */}
   </div>
+  <div className="login-header">
+      <h1 className="site-title">Login</h1>
+  </div>
   <div className="login-forms">
     <div className="login-form-user">
       <img src="/images/loginuser.png" alt="Swift Logo" className="loginphoto" />
