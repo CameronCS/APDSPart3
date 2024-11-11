@@ -1,5 +1,5 @@
 .payments-container {
-    margin: 0 auto;
+    margin-top: 4rem;
     padding: 20px;
     font-family: Arial, sans-serif;
     min-height: 71vh;
@@ -70,7 +70,7 @@
   .payments-table td.date::before {
     content: "📅 ";
   }
-
+  
   .viewButton {
     margin-bottom: 20px;
     padding: 10px 15px;

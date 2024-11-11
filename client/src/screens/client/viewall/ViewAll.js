@@ -74,7 +74,7 @@ export default function ViewAll({ user, setUser }) {
                 <td class="date">{new Date(payment.createdAt).toLocaleString()}</td>
                 <td>{payment.status}</td>
                 <td>
-                  <button onClick={() => {
+                  <button className='viewButton' onClick={() => {
                     navigate(`/user/view/${payment._id}`)
                   }}>
                     View

@@ -50,8 +50,11 @@ export default function UViewOne({ user, setUser }) {
 
     return (
         <div className="payment-details">
+            <div className="navspace">
+                {/* This space is for the fixed header */}
+            </div>
             <h1>Viewing Payment ID: {__id}</h1>
-            <button
+            <button className='back-button'
                 onClick={() => {
                     navigate('/user/view-all')
                 }}

@@ -95,22 +95,14 @@ export default function Login({ setUser }) {
   <div className="login-header">
       <h1 className="site-title">Login</h1>
   </div>
-  <div className="login-forms">
+  <div className="login-form">
     <div className="login-form-user">
       <img src="/images/loginuser.png" alt="Swift Logo" className="loginphoto" />
       <label>Enter username:</label>
       <input defaultValue={"SwiftUser1"} onChange={(e) => { setUsername(e.target.value) }}></input>
       <label>Enter password:</label>
-      <input defaultValue={"SwiftUser1!"} onChange={(e) => { setPassword(e.target.value) }}></input>
-      <button onClick={log_user_in}>Log in as User</button>
-    </div>
-    <div className="login-form-emp">
-    <img src="/images/loginadmin.png" alt="Swift Logo" className="loginphoto" />
-      <label>Enter username:</label>
-      <input defaultValue={"AdminUser1"} onChange={(e) => { setUsername(e.target.value) }}></input>
-      <label>Enter password:</label>
-      <input defaultValue={"AdminUser1!"} onChange={(e) => { setPassword(e.target.value) }}></input>
-      <button onClick={log_admin_in}>Log in as Admin</button>
+      <input type='password' defaultValue={"SwiftUser1!"} onChange={(e) => { setPassword(e.target.value) }}></input>
+      <button className='loginbutton' onClick={log_user_in}>Log in :)</button>
     </div>
   </div>
 </div>

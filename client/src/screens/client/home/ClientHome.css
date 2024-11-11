@@ -1,0 +1,53 @@
+.UserHome {
+    width: 100%;
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center the content vertically */
+    align-items: center; /* Center the content horizontally */
+    background: 
+    linear-gradient(
+      rgba(255, 255, 255, 0.6), 
+      rgba(255, 255, 255, 0.6)
+    ), 
+    url('/public/images/background.png'); 
+    background-size: cover;
+    background-position: center; 
+    background-size: cover;  
+    background-position: center; 
+}
+  
+.UserMessage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 2rem 3rem; /* Adding padding for a spacious feel */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center;
+    max-width: 80%; /* Limit the width of the content */
+    margin: 2rem; /* Add some space around the UserMessage */
+}
+
+.UserMessage h1 {
+    font-size: 3rem;
+    font-family: 'Arial', sans-serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adding a subtle text shadow */
+}
+
+.UserMessage h2 {
+    font-size: 2rem;
+    font-family: 'Arial', sans-serif;
+    font-weight: 400;
+    color: #333; /* Darker text for the username */
+    margin-top: 1rem;
+    padding: 0;
+    letter-spacing: 1px;
+}

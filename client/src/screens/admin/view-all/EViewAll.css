@@ -1,0 +1,87 @@
+.payments-container {
+    margin-top: 4rem;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    min-height: 71vh;
+    background: 
+    linear-gradient(
+      rgba(255, 255, 255, 0.6), 
+      rgba(255, 255, 255, 0.6)
+    ), 
+    url('/public/images/background.png'); 
+    background-size: cover;
+    background-position: center; 
+    background-size: cover;  
+    background-position: center; 
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .payments-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .payments-table th,
+  .payments-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .payments-table th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .payments-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .payments-table tr:hover {
+    background-color: #AAA;
+  }
+  
+  .no-payments {
+    text-align: center;
+    font-size: 1.5em;
+    color: #555;
+  }
+
+  .payments-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+  }
+  
+  .payments-table td.date {
+    font-style: italic;
+    color: #666;
+  }
+  
+  .payments-table td.date::before {
+    content: "📅 ";
+  }
+
+  .viewButton {
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #4E3B31;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .viewButton:hover {
+    background-color: #221914;
+}
