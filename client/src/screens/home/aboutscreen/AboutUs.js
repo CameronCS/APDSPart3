@@ -1,7 +1,11 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './AboutUs.css'
 
 export default function AboutUs() {
+  useEffect(() => {
+    document.title = 'Swift Portal - About Us';
+  }, []);
+
   return (
     <div className='about-us-page'>
       <h1 className='au-h1'>About Us</h1>

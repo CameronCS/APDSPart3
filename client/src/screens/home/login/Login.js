@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import './Login.css'
 import { useNavigate } from 'react-router-dom'
 
@@ -7,6 +7,10 @@ export default function Login({ setUser }) {
   const [h_password, setPassword] = useState("")
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.title = 'Swift Portal - Login';
+  }, []);
 
   const log_user_in = async () => {
     try {
